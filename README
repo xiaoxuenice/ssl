@@ -1,9 +1,0 @@
-1,第一步安装
-2,在yuming.txt文件中添加申请的泛域名
-3,先执行 第一个脚本  生成txt值
-#cat a.txt |grep Domain|awk -F "[']" '{print $2}'
-#cat a.txt |grep "TXT value"|awk -F "[']" '{print $2}'
-4,在域名解析系统 添加txt值
-5,再执行 第二个脚本 生成证书
-6,执行   第三个脚本 个上传
-acme.sh  --upgrade  --auto-upgrade 保持自动更新
