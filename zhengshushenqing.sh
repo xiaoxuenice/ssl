@@ -25,7 +25,7 @@ Chcer(){
 for i in `ls |grep cer`;do c=`echo $i|awk -F'[_.]' '{print $2"."$3}'` && mv $i ${c}.cer ;done
 }
 Chall(){
-for i in `ls|grep cer|awk -F'.' '{print $1"."$2}'`;do cp /usr/local/nginx/kis/1882101.com.conf ${i}.conf && sed -i "s/1882101\.com/$i/g" ${i}.conf;done
+for i in `ls|grep cer|awk -F'.' '{print $1"."$2}'`;do cp /usr/local/nginx/kis/jd.com.conf ${i}.conf && sed -i "s/jd\.com/$i/g" ${i}.conf;done
 }
 Mv(){
 mv  *cer *key *conf /shangchuan
