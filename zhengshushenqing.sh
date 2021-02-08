@@ -1,6 +1,4 @@
 #!/bin/sh
-#	！！==========   	必须把脚本放在  /newzhengshu/下  =====================！！
-#	！！==========   	必须把脚本放在  /newzhengshu/下  =====================！！
 #同目录下 把域名写在yuming.txt里面 例如jd.com
 echo -e "\033[31;1m 1,申请中...    \033[0m"
 rm -rf /root/.acme.sh/\*.*
@@ -15,10 +13,8 @@ for i in `cat yuming.txt`;do  /root/.acme.sh/acme.sh --issue  -d "*.${i}" -d ${i
 echo -e "\033[31;1m =========！！！如果有error重新添加txt 再执行上面这条命令！！！========    \033[0m"
 read
 echo -e "\033[31;1m 4,申请成功,制作配置文件中....:    \033[0m"
-cd /root/.acme.sh
-for i in `ls |grep \*`;do cp ${i}/${i}.cer ${i}/${i}.key /newzhengshu ;done
+for i in `ls /root/.acme.sh|grep \*`;do cp /root/.acme.sh/${i}/${i}.cer /root/.acme.sh/${i}/${i}.key . ;done
 sleep 1 
-cd /newzhengshu/
 if [ ! -d /shangchuan ];then mkdir /shangchuan/ ;fi
 rm -rf /shangchuan/*
 sleep 1
